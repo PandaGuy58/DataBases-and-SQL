@@ -1,7 +1,7 @@
 import sqlite3
 
 def create_table(db_name,table_name,sql):
-    with sqlite3.connect("store.db") as db:
+    with sqlite3.connect(db_name) as db:
         cursor = db.cursor()
         cursor.execute("select name from sqlite_master where name=?",(table_name,))
         result = cursor.fetchall()
